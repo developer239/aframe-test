@@ -2,6 +2,7 @@
 <head>
   <meta charset="utf-8">
   <title>360 Video</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="description" content="360 Video — A-Frame">
   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
   <style>
@@ -20,8 +21,7 @@
 </div>
 <a-scene foo>
   <a-assets>
-    <video id="video" src="https://cdn.jwplayer.com/videos/AgqYcfAT-8yQ1cYbs.mp4"
-           loop crossorigin="anonymous"></video>
+    <video id="video" src="https://spherevideotest.herokuapp.com/example.mp4" loop></video>
   </a-assets>
 
   <a-videosphere src="#video" rotation="0 180 0"></a-videosphere>
