@@ -1,0 +1,44 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>360 Video</title>
+  <meta name="description" content="360 Video — A-Frame">
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <style>
+    #controls {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+<div id="controls">
+  <button id="play">play</button>
+  <button id="pause">pause</button>
+</div>
+<a-scene foo>
+  <a-assets>
+    <video id="video" src="https://cdn.jwplayer.com/videos/AgqYcfAT-8yQ1cYbs.mp4"
+           autoplay loop crossorigin="anonymous"></video>
+  </a-assets>
+
+  <a-videosphere src="#video" rotation="0 180 0"></a-videosphere>
+</a-scene>
+<script>
+  const $video = document.getElementById('video')
+
+  $playButton = document.getElementById('play')
+  $pauseButton = document.getElementById('pause')
+
+  $playButton.addEventListener('click', () => {
+    $video.play()
+  })
+
+  $pauseButton.addEventListener('click', () => {
+    $video.pause()
+  })
+</script>
+</body>
+</html>
