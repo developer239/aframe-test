@@ -5,11 +5,23 @@
   <title>Hello, WebVR! • A-Frame</title>
   <meta name="description" content="Hello, WebVR! • A-Frame">
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <style>
+    #controls {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 999;
+    }
+  </style>
 </head>
 <body>
+<div id="controls">
+  <button id="play">play</button>
+  <button id="pause">pause</button>
+</div>
 <a-scene background="color: #FAFAFA">
   <a-assets>
-    <video id="video" autoplay="" loop="" crossorigin="anonymous" playsinline="" webkit-playsinline="">
+    <video id="video" loop="" crossorigin="anonymous" playsinline="" webkit-playsinline="">
       <source src="https://spherevideotest.herokuapp.com/example.mp4">
     </video>
   </a-assets>
@@ -17,10 +29,17 @@
 </a-scene>
 </body>
 <script>
-  document.addEventListener('click', function () {
-    var videoEl = document.querySelector('#video');
-    videoEl.play();
-  });
+  $playButton = document.getElementById('play')
+  $pauseButton = document.getElementById('pause')
 
+  $playButton.addEventListener('click', () => {
+    const $video = document.getElementById('video')
+    $video.play()
+  })
+
+  $pauseButton.addEventListener('click', () => {
+    const $video = document.getElementById('video')
+    $video.pause()
+  })
 </script>
 </html>
